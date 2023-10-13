@@ -73,6 +73,7 @@ def parent_flow(color: str, months: list[int], year:int) -> None:
         etl_web_to_gcs(month, year, color)
 
 if __name__ == '__main__':
+    os.getcwd()
     color = "yellow"
     months = [2,3]
     year = 2019 
