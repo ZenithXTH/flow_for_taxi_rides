@@ -69,6 +69,7 @@ def etl_web_to_gcs(
 
 @flow(log_prints = True)
 def parent_flow(color: str, months: list[int], year:int) -> None:
+    print(f"Working dir: {os.getcwd()}")
     for month in months:
         etl_web_to_gcs(month, year, color)
 
