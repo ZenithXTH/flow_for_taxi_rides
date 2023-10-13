@@ -69,12 +69,13 @@ def etl_web_to_gcs(
 
 @flow(log_prints = True)
 def parent_flow(color: str, months: list[int], year:int) -> None:
+    print(f"CURRENT WORKING DIR: {os.getcwd()}Z")
     print(f"Working dir: {os.getcwd()}")
     for month in months:
         etl_web_to_gcs(month, year, color)
 
 if __name__ == '__main__':
-    os.getcwd()
+    print(os.getcwd())
     color = "yellow"
     months = [2,3]
     year = 2019 
