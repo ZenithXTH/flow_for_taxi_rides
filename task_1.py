@@ -29,7 +29,7 @@ def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
     """Write DataFrame out locally as parquet file"""
     directory = color
     # Parent Directory path 
-    parent_dir = "./data"
+    parent_dir = "~/dev/week_2_workflow_orchestration/homework/data"
     # Path 
     path = os.path.join(parent_dir, directory) 
     if(not os.path.isdir(path)):
@@ -39,7 +39,8 @@ def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
 
     path = Path(f"{path}/{dataset_file}.parquet")
     df.to_parquet(path, compression = "gzip")
-    return path
+    path = Path(f"data/{color}/{dataset_file}.parquet") 
+    return 
 
 @task()
 def write_gcs(path: Path) -> None: 
