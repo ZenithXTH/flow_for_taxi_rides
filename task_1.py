@@ -65,6 +65,8 @@ def etl_web_to_gcs(
     
     df = fetch(dataset_url)
     df_clean = clean(df)
+    row_count = len(df_clean)
+    print(f"Number of Rows processed: {row_count}")
     path = write_local(df_clean, color, dataset_file)
     write_gcs(path)
 
