@@ -29,7 +29,7 @@ def write_local(df: pd.DataFrame, color: str, dataset_file: str) -> Path:
     """Write DataFrame out locally as parquet file"""
     directory = color
     # Parent Directory path 
-    parent_dir = "/Users/santiago/dev/data-engineering-zoomcamp/week_2_workflow_orchestration/data"
+    parent_dir = "/Users/santiago/dev/data-engineering-zoomcamp/week_2_workflow_orchestration/homework/data"
     path = os.path.join(parent_dir, directory) 
     if(not os.path.isdir(path)):
     # Create the directory ls
