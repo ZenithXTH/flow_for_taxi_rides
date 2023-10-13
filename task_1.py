@@ -47,7 +47,7 @@ def write_gcs(path: Path) -> None:
     """ Uploading local parquet file to GCS"""
     gcs_block = GcsBucket.load("zoom-gcs")
     gcs_block.upload_from_path(
-        from_path = f"{path}",
+        from_path = f"/Users/santiago/dev/data-engineering-zoomcamp/week_2_workflow_orchestration/homework/{path}",
         to_path = f"{path}"
     )
     return
